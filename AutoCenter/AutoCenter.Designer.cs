@@ -1,6 +1,6 @@
 ﻿namespace AutoCenter
 {
-    partial class Form1
+    partial class AutoCenter
     {
         /// <summary>
         /// Required designer variable.

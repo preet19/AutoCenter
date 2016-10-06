@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AutoCenter
 {
-    public partial class Form1 : Form
+    public partial class AutoCenter : Form
     {
-        public Form1()
+        public AutoCenter()
         {
             InitializeComponent();
         }
