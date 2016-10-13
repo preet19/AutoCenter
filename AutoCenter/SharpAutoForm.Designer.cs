@@ -50,19 +50,19 @@
             this.computerNavigationCheckBox = new System.Windows.Forms.CheckBox();
             this.additionalOptionsGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pearlizedRadioButton = new System.Windows.Forms.RadioButton();
+            this.customizedDeatilingRadioButton = new System.Windows.Forms.RadioButton();
+            this.standardRadioButton = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.standardRadioButton = new System.Windows.Forms.RadioButton();
-            this.customizedDeatilingRadioButton = new System.Windows.Forms.RadioButton();
-            this.pearlizedRadioButton = new System.Windows.Forms.RadioButton();
             this.additionalOptionsGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -208,7 +208,7 @@
             this.calculateButton.TabIndex = 4;
             this.calculateButton.Text = "Calculate";
             this.calculateButton.UseVisualStyleBackColor = true;
-            this.calculateButton.Click += new System.EventHandler(this.button1_Click);
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // button2
             // 
@@ -219,7 +219,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // button3
             // 
@@ -230,7 +230,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Exit";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // stereoSystemCheckBox
             // 
@@ -290,6 +290,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Exterior Finish";
             // 
+            // pearlizedRadioButton
+            // 
+            this.pearlizedRadioButton.AutoSize = true;
+            this.pearlizedRadioButton.Location = new System.Drawing.Point(37, 65);
+            this.pearlizedRadioButton.Name = "pearlizedRadioButton";
+            this.pearlizedRadioButton.Size = new System.Drawing.Size(77, 19);
+            this.pearlizedRadioButton.TabIndex = 7;
+            this.pearlizedRadioButton.Text = "Pearlized";
+            this.pearlizedRadioButton.UseVisualStyleBackColor = true;
+            this.pearlizedRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // customizedDeatilingRadioButton
+            // 
+            this.customizedDeatilingRadioButton.AutoSize = true;
+            this.customizedDeatilingRadioButton.Location = new System.Drawing.Point(37, 43);
+            this.customizedDeatilingRadioButton.Name = "customizedDeatilingRadioButton";
+            this.customizedDeatilingRadioButton.Size = new System.Drawing.Size(140, 19);
+            this.customizedDeatilingRadioButton.TabIndex = 7;
+            this.customizedDeatilingRadioButton.Text = "customized Deatiling";
+            this.customizedDeatilingRadioButton.UseVisualStyleBackColor = true;
+            this.customizedDeatilingRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // standardRadioButton
+            // 
+            this.standardRadioButton.AutoSize = true;
+            this.standardRadioButton.Checked = true;
+            this.standardRadioButton.Location = new System.Drawing.Point(37, 21);
+            this.standardRadioButton.Name = "standardRadioButton";
+            this.standardRadioButton.Size = new System.Drawing.Size(75, 19);
+            this.standardRadioButton.TabIndex = 7;
+            this.standardRadioButton.TabStop = true;
+            this.standardRadioButton.Text = "Standard";
+            this.standardRadioButton.UseVisualStyleBackColor = true;
+            this.standardRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -315,6 +350,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Exit";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -326,26 +362,21 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
             this.calculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.calculateToolStripMenuItem.Text = "Calculate";
+            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem
             // 
@@ -358,51 +389,25 @@
             // 
             this.clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
             this.clearToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.clearToolStripMenuItem1.Text = "Clear";
+            this.clearToolStripMenuItem1.Text = "Color";
+            this.clearToolStripMenuItem1.Click += new System.EventHandler(this.clearToolStripMenuItem1_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // standardRadioButton
-            // 
-            this.standardRadioButton.AutoSize = true;
-            this.standardRadioButton.Checked = true;
-            this.standardRadioButton.Location = new System.Drawing.Point(37, 21);
-            this.standardRadioButton.Name = "standardRadioButton";
-            this.standardRadioButton.Size = new System.Drawing.Size(75, 19);
-            this.standardRadioButton.TabIndex = 7;
-            this.standardRadioButton.TabStop = true;
-            this.standardRadioButton.Text = "Standard";
-            this.standardRadioButton.UseVisualStyleBackColor = true;
-            this.standardRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // customizedDeatilingRadioButton
-            // 
-            this.customizedDeatilingRadioButton.AutoSize = true;
-            this.customizedDeatilingRadioButton.Location = new System.Drawing.Point(37, 43);
-            this.customizedDeatilingRadioButton.Name = "customizedDeatilingRadioButton";
-            this.customizedDeatilingRadioButton.Size = new System.Drawing.Size(140, 19);
-            this.customizedDeatilingRadioButton.TabIndex = 7;
-            this.customizedDeatilingRadioButton.Text = "customized Deatiling";
-            this.customizedDeatilingRadioButton.UseVisualStyleBackColor = true;
-            this.customizedDeatilingRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // pearlizedRadioButton
-            // 
-            this.pearlizedRadioButton.AutoSize = true;
-            this.pearlizedRadioButton.Location = new System.Drawing.Point(37, 65);
-            this.pearlizedRadioButton.Name = "pearlizedRadioButton";
-            this.pearlizedRadioButton.Size = new System.Drawing.Size(77, 19);
-            this.pearlizedRadioButton.TabIndex = 7;
-            this.pearlizedRadioButton.Text = "Pearlized";
-            this.pearlizedRadioButton.UseVisualStyleBackColor = true;
-            this.pearlizedRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // AutoCenter
+            // SharpAutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -428,7 +433,7 @@
             this.Controls.Add(this.basePriceTextBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "AutoCenter";
+            this.Name = "SharpAutoForm";
             this.Text = "Auto Center";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.additionalOptionsGroupBox.ResumeLayout(false);

@@ -8,6 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * 	App name = Sharp auto form
+    Author's name = Dilpreet Singh
+    Student	ID = 200306382
+    App	Creation Date = 13/10/2016
+    App description = This program calculates the amount due on a New or Used Vehicle
+ */
 namespace AutoCenter
 {
     public partial class SharpAutoForm : Form
@@ -72,17 +79,28 @@ namespace AutoCenter
 
         }
 
+         /*
+          * this method change the font of textbox
+         */
+          
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            amountDueTextBox.BackColor = Color.Blue;
-            basePriceTextBox.BackColor = Color.Blue;
-
+            amountDueTextBox.Font = new Font("Arial", amountDueTextBox.Font.Size);
+            basePriceTextBox.Font = new Font("Arial", basePriceTextBox.Font.Size);
         }
+
+         /*
+         * message box to display text about the project 
+         */
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This program calculates  the amount  due on  a New or  Used    Vehicle");
         }
+
+        /*
+         *  check if checkbox and radiobuttons are selected and calculate the value based on it
+         */ 
 
         private void additionalOptionsTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -122,7 +140,11 @@ namespace AutoCenter
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /*
+         *  calculate button to calculate the subtotal
+         */ 
+
+        private void calculateButton_Click(object sender, EventArgs e)
         {
             var checkedRadioButton = additionalOptionsGroupBox.Controls.OfType<RadioButton>()
                                       .FirstOrDefault(rb => rb.Checked);
@@ -133,7 +155,11 @@ namespace AutoCenter
             subTotalTextBox.Text = finalValue;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        /*
+         * clear all the form text properties
+         */
+          
+        private void clearButton_Click(object sender, EventArgs e)
         {
             basePriceTextBox.Text = String.Empty;
             additionalOptionsTextBox.Text = String.Empty;
@@ -151,9 +177,54 @@ namespace AutoCenter
             pearlizedRadioButton.Checked = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        /*
+         *  terminate the app
+         */ 
+
+        private void exitButton_Click(object sender, EventArgs e)
         {
             System.Environment.Exit(1);
+        }
+
+        /*
+         *  change the color of text
+         */ 
+
+        private void clearToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            amountDueTextBox.BackColor = Color.Blue;
+            basePriceTextBox.BackColor = Color.Blue;
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+         *  call  the calculate event
+        */
+         
+        private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            calculateButton_Click(sender,e);
+        }
+
+        /*
+         * call the clear event
+         */ 
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clearButton_Click(sender, e);
+        }
+
+        /*
+         *  call the exit event
+         */ 
+          
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitButton_Click(sender, e);
         }
     }
 }
