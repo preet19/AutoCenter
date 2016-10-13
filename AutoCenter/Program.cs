@@ -16,7 +16,7 @@ namespace AutoCenter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutoCenter());
+            Application.Run(new SharpAutoForm());
         }
     }
 }
