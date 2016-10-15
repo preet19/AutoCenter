@@ -146,14 +146,212 @@ namespace AutoCenter
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            var checkedRadioButton = additionalOptionsGroupBox.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(rb => rb.Checked);
-            var checkedCheckBox = additionalOptionsGroupBox.Controls.OfType<CheckBox>()
-                                      .FirstOrDefault(rb => rb.Checked);
-            var finalValue = checkedRadioButton.Text + checkedCheckBox.Text + basePriceTextBox.Text;
+            double stereoSystem = 425.76;
+            double leatherInterior = 987.41;
+            double computerNavigation = 1741.23;
+            int standard = 0;
+            double pearlized = 345.72;
+            double customizedDetailing = 599.99;
+            double basePrice = 1000.00;
+            double tradeInAmount = 100.00;
 
-            subTotalTextBox.Text = finalValue;
+            if (computerNavigationCheckBox.Checked && stereoSystemCheckBox.Checked && 
+                leatherInteriorCheckBox.Checked)
+            {
+                if (standardRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice+computerNavigation+stereoSystem+leatherInterior)
+                                            .ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + stereoSystem + leatherInterior)
+                                        * 0.13) + (basePrice + computerNavigation + stereoSystem +
+                                        leatherInterior )).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem +
+                                            leatherInterior)-tradeInAmount).ToString();
+                }
+                else if  (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice+computerNavigation+stereoSystem+
+                                            leatherInterior+pearlized).ToString();
+                    totalTextBox.Text = (((basePrice+computerNavigation+stereoSystem+leatherInterior
+                                            +pearlized) * 0.13) + (basePrice + computerNavigation + 
+                                            stereoSystem + leatherInterior + pearlized)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem +
+                                            leatherInterior + pearlized) - tradeInAmount).ToString();
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + stereoSystem + leatherInterior
+                                            + customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + stereoSystem + leatherInterior+
+                                        customizedDetailing) * 0.13) + (basePrice + computerNavigation +
+                                         stereoSystem+ leatherInterior + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem + leatherInterior
+                                            + customizedDetailing) - tradeInAmount).ToString();
+
+                }
+            }
+            else if (computerNavigationCheckBox.Checked && stereoSystemCheckBox.Checked)
+            {
+                if (standardRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + stereoSystem ).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + stereoSystem) * 0.13) + 
+                                        (basePrice + computerNavigation + stereoSystem)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem) - tradeInAmount)
+                                            .ToString();
+
+                }
+                else if (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + stereoSystem  + pearlized)
+                                            .ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + stereoSystem + pearlized) * 0.13)
+                                        + (basePrice + computerNavigation + stereoSystem + pearlized)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem + pearlized)
+                                            - tradeInAmount).ToString();
+
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + stereoSystem  + 
+                                            customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + stereoSystem +
+                                        customizedDetailing) * 0.13) + (basePrice + computerNavigation +
+                                            stereoSystem + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + stereoSystem +
+                                            customizedDetailing) - tradeInAmount).ToString();
+
+                }
+            }
+            else if (computerNavigationCheckBox.Checked && leatherInteriorCheckBox.Checked)
+            {
+                if (standardRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation  + leatherInterior).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + leatherInterior ) * 0.13)
+                                        + (basePrice + computerNavigation + leatherInterior)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + leatherInterior) - tradeInAmount).ToString();
+
+                }
+                else if (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation  + leatherInterior + pearlized)
+                                            .ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + leatherInterior + pearlized)
+                                           * 0.13) + (basePrice + computerNavigation + leatherInterior +
+                                            pearlized)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + leatherInterior + pearlized)
+                                            - tradeInAmount).ToString();
+
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation  + leatherInterior + 
+                                            customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + leatherInterior + 
+                                        customizedDetailing) * 0.13) + (basePrice + computerNavigation + 
+                                           leatherInterior + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + leatherInterior + 
+                                            customizedDetailing) - tradeInAmount).ToString();
+
+                }
+            }
+            else if (computerNavigationCheckBox.Checked)
+            {
+                if (standardRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation) * 0.13) + 
+                                        (basePrice +computerNavigation)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation) - tradeInAmount).ToString();
+
+                }
+                else if (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + pearlized).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + pearlized) * 0.13) +
+                                        (basePrice + computerNavigation + pearlized)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + pearlized) - tradeInAmount)
+                                            .ToString();
+
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + computerNavigation + customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + computerNavigation + customizedDetailing) * 0.13)
+                                        + (basePrice + computerNavigation + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + computerNavigation + customizedDetailing) -
+                                            tradeInAmount).ToString();
+
+                }
+            }
+            else if (leatherInteriorCheckBox.Checked)
+            {
+                if (standardRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + leatherInterior).ToString();
+                    totalTextBox.Text = (((basePrice + leatherInterior) * 0.13) +
+                                        (basePrice + leatherInterior)).ToString();
+                    amountDueTextBox.Text = ((basePrice + leatherInterior) - tradeInAmount).ToString();
+
+                }
+                else if (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + leatherInterior + pearlized).ToString();
+                    totalTextBox.Text = (((basePrice + leatherInterior + pearlized) * 0.13) +
+                                        (basePrice + leatherInterior + pearlized)).ToString();
+                    amountDueTextBox.Text = ((basePrice + leatherInterior + pearlized) - tradeInAmount)
+                                            .ToString();
+
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + leatherInterior + customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + leatherInterior + customizedDetailing) * 0.13)
+                                        + (basePrice + leatherInterior + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + leatherInterior + customizedDetailing) -
+                                            tradeInAmount).ToString();
+
+                }
+            }
+            else
+            {
+                if (standardRadioButton.Checked)
+                {
+                   subTotalTextBox.Text = (basePrice + stereoSystem).ToString();
+                   totalTextBox.Text = (((basePrice + stereoSystem ) * 0.13) + (basePrice + stereoSystem))
+                                        .ToString();
+                   amountDueTextBox.Text = ((basePrice + stereoSystem) - tradeInAmount).ToString();
+
+                }
+                else if (pearlizedRadioButton.Checked)
+                {
+                    subTotalTextBox.Text = (basePrice + stereoSystem + pearlized).ToString();
+                    totalTextBox.Text = (((basePrice + stereoSystem + pearlized)*  0.13) + 
+                                        (basePrice + stereoSystem + pearlized) ).ToString();
+                    amountDueTextBox.Text = ((basePrice + stereoSystem+ pearlized) - tradeInAmount).ToString();
+
+                }
+                else
+                {
+                    subTotalTextBox.Text = (basePrice + stereoSystem + customizedDetailing).ToString();
+                    totalTextBox.Text = (((basePrice + stereoSystem + customizedDetailing) * 0.13) +
+                                            (basePrice + stereoSystem + customizedDetailing)).ToString();
+                    amountDueTextBox.Text = ((basePrice + stereoSystem + customizedDetailing) -
+                                            tradeInAmount).ToString();
+
+                }
+
+            }
+
+
+
+
+
+
         }
+
+        
 
         /*
          * clear all the form text properties
